@@ -1,0 +1,86 @@
+.task-management-list-item {
+    min-width: 200px;
+}
+
+li {
+    list-style: none;
+}
+
+.task-completed-section {
+    padding: 5px;
+    margin-right: 5px;
+    border-right: 1px solid;
+    min-width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.task-details-section {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.task-title {
+    font-size: 1em;
+    margin: 0;
+}
+
+.task-description {
+    color: grey;
+    font-size: .75em;
+    margin: 0;
+}
+
+.task-top-section {
+    display: flex;
+    border-top: 1px solid;
+}
+
+.task-bottom-section {
+    padding: 5px;
+    border-top: 1px solid grey;
+    display: flex;
+    border-bottom: 1px solid;
+}
+
+.task-due-date-section {
+    font-size: 0.75em;
+    padding: 5px;
+    border-right: 1px solid grey;
+
+}
+
+.task-due-date {
+    margin: 0;
+    padding: 5px;
+}
+
+.task-tags-section {
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.task-priority-section {
+    border-left: 1px solid grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.task-description-input {
+    font-size: .75em;
+    border: 0;
+    padding: 0;
+}
+
+.task-title-input {
+    font-size: 1em;
+    border: 0;
+    padding: 0;
+}

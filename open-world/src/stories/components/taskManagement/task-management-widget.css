@@ -1,0 +1,19 @@
+
+.task-management-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-rightradius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.task-management-title {
+    margin: 0;
+    color: white;
+    padding: 0.5em;
+}
+
+.task-management-widget {
+    font-family: "Space Grotesk";
+}
