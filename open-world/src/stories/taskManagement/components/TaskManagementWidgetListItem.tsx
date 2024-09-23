@@ -22,6 +22,9 @@ export const TaskManagementListItem = ({
     const [editableTitle, setEditableTitle] = useState(false);
     const [taskDescription, setTaskDescription] = useState(task.description);
     const [editableDescription, setEditableDescription] = useState(false);
+    const [taskCompleted, setTaskCompleted] = useState(task.completed);
+    const [dueDate, setDueDate] = useState(task.dueDate);
+    const [editableDueDate, setEditableDueDate] = useState(false);
 
     // Task Title
     function handleTaskTitleClick() {
@@ -52,7 +55,6 @@ export const TaskManagementListItem = ({
     }
 
     // Task Description
-
     function handleTaskDescriptionClick() {
         setEditableDescription(!editableDescription);
     }
@@ -89,11 +91,34 @@ export const TaskManagementListItem = ({
         }
     }
 
-
-    function setTaskCompletedStatus() {
-        task.completed = !task.completed;
+    // Due Date
+    const dueDateElement = () => {
+        if (editableDueDate) {
+            return (
+                <input type="date" onChange={handleDueDate} onClick={handleDueDateClick} autoFocus/>
+            )
+        } else {
+            return (
+                <p className="task-due-date" onClick={handleDueDateClick}>Due {dueDate.toLocaleDateString()}</p>
+            )
+        }
     }
 
+    function handleDueDate(e: any) {
+        e.preventDefault();
+        setDueDate(new Date(e.target.value));
+    }
+
+    function handleDueDateClick() {
+        setEditableDueDate(!editableDueDate);
+    }
+
+    // Completed
+    function setTaskCompletedStatus() {
+        setTaskCompleted(!taskCompleted);
+    }
+
+    // Tags
     const tags = task.tags.map((tag) => {
         return <Tag tag={tag}/>
     });
@@ -116,7 +141,7 @@ export const TaskManagementListItem = ({
         <li className="task-management-list-item" style={theme.taskManagementListItem}>
             <div className="task-top-section" style={theme.taskTopSection}>
                 <div className="task-completed-section" style={theme.taskCompletedSection}>
-                    <Checkbox checked={task.completed} onClick={setTaskCompletedStatus} label={""}/>
+                    <Checkbox checked={taskCompleted} onClick={setTaskCompletedStatus} label={""}/>
                 </div>
                 <div className="task-details-section" style={theme.taskDetailsSection}>
                     {taskTitleElement()}
@@ -125,7 +150,7 @@ export const TaskManagementListItem = ({
             </div>
             <div className="task-bottom-section" style={theme.taskBottomSection}>
                 <div className="task-due-date-section" style={theme.taskDueDateSection}>
-                    <p className="task-due-date">Due {task.dueDate.toLocaleDateString()}</p>
+                    {dueDateElement()}
                 </div>
                 <div className="task-tags-section" style={theme.taskTagsSection}>
                     {tags}
