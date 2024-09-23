@@ -1,9 +1,9 @@
 import React from "react";
 import { Task } from "../../../types/Task";
-import { Tag } from "../tag/Tag";
-import { Checkbox } from "../checkbox/Checkbox";
-import "./task-management-widget-listitem.css";
-import { Priority } from "./enums";
+import { Tag } from "../../components/tag/Tag";
+import { Checkbox } from "../../components/checkbox/Checkbox";
+import "../styles/task-management-widget-listitem.css";
+import { Priority } from "../types/enums";
 import { useState } from "react";
 import { TaskManagementTheme } from "../../../types/TaskManagementTheme";
 

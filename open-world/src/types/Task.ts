@@ -1,5 +1,5 @@
 import { TagType } from "./Tag";
-import { Priority } from "../stories/components/taskManagement/enums";
+import { Priority } from "../stories/taskManagement/types/enums";
 
 export type Task = {
     title: string,

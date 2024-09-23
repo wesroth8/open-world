@@ -1,10 +1,10 @@
 import React from "react";
 import { useState } from "react";
-import { WidgetType } from "./enums";
-import { Task } from "../../../../../types/Task";
-import { TaskManagementListItem } from "../../TaskManagementWidgetListItem/TaskManagementWidgetListItem";
-import '../../task-management-widget.css';
-import { TaskManagementTheme } from "../../../../../types/TaskManagementTheme";
+import { WidgetType } from "../types/enums";
+import { Task } from "../../../types/Task";
+import { TaskManagementListItem } from "./TaskManagementWidgetListItem";
+import '../styles/task-management-widget.css';
+import { TaskManagementTheme } from "../../../types/TaskManagementTheme";
 
 
 export interface TaskManagementWidgetProps {

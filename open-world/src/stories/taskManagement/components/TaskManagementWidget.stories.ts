@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
  
 import { TaskManagementWidget } from './TaskManagementWidget';
-import { WidgetType, Priority } from './enums';
+import { WidgetType, Priority } from '../types/enums';
 
-import { woodTheme } from '../../../themes/wood';
-import { spaceTheme } from '../../../themes/space';
+import { woodTheme } from '../themes/wood';
+import { spaceTheme } from '../themes/space';
  
 const meta: Meta<typeof TaskManagementWidget> = {
   component: TaskManagementWidget,

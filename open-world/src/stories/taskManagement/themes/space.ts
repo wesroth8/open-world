@@ -1,4 +1,4 @@
-import { TaskManagementTheme } from "../types/TaskManagementTheme";
+import { TaskManagementTheme } from "../../../types/TaskManagementTheme";
 
 const spaceBlack = '#000000';
 const spaceNavy = '#14213D';

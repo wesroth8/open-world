@@ -1,4 +1,4 @@
-import { TaskManagementTheme } from "../types/TaskManagementTheme";
+import { TaskManagementTheme } from "../../../types/TaskManagementTheme";
 
 const chestnut = '#432818';
 const birch = '#FFE6A7';
