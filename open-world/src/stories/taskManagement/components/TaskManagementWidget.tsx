@@ -6,7 +6,6 @@ import { TaskManagementListItem } from "./TaskManagementWidgetListItem";
 import '../styles/task-management-widget.css';
 import { TaskManagementTheme } from "../../../types/TaskManagementTheme";
 
-
 export interface TaskManagementWidgetProps {
     widgetType: WidgetType,
     tasks: Task[],

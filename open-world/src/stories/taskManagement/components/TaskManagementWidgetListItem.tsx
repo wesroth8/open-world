@@ -7,6 +7,8 @@ import { Priority } from "../types/enums";
 import { useState } from "react";
 import { TaskManagementTheme } from "../../../types/TaskManagementTheme";
 
+
+
 export interface TaskManagementListItemProps {
     task: Task,
     theme: TaskManagementTheme,
@@ -18,12 +20,14 @@ export const TaskManagementListItem = ({
     ...props
 }: TaskManagementListItemProps) => {
 
+    const formattedDate = task.dueDate.getUTCMonth() + '-' + task.dueDate.getUTCDate()
+
     const [taskTitle, setTaskTitle] = useState(task.title);
     const [editableTitle, setEditableTitle] = useState(false);
     const [taskDescription, setTaskDescription] = useState(task.description);
     const [editableDescription, setEditableDescription] = useState(false);
     const [taskCompleted, setTaskCompleted] = useState(task.completed);
-    const [dueDate, setDueDate] = useState(task.dueDate);
+    const [dueDate, setDueDate] = useState(formattedDate);
     const [editableDueDate, setEditableDueDate] = useState(false);
 
     // Task Title
@@ -99,14 +103,14 @@ export const TaskManagementListItem = ({
             )
         } else {
             return (
-                <p className="task-due-date" onClick={handleDueDateClick}>Due {dueDate.toLocaleDateString()}</p>
+                <p className="task-due-date" onClick={handleDueDateClick}>Due {dueDate}</p>
             )
         }
     }
 
     function handleDueDate(e: any) {
         e.preventDefault();
-        setDueDate(new Date(e.target.value));
+        setDueDate(e.target.value);
     }
 
     function handleDueDateClick() {
